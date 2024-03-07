@@ -23,3 +23,9 @@ spring:
         default_batch_fetch_size: 1000
         globally_quoted_identifiers: true
     show_sql: true
+
+#p6spy query logging
+decorator:
+  datasource:
+    p6spy:
+      enable-logging: true

@@ -21,6 +21,11 @@ class Member(
     @Enumerated(EnumType.STRING)
     var role: Role = role
         private set
+
+    override fun toString(): String {
+        return "Member(email='$email', password='$password', role=$role)"
+    }
+
 }
 
 /**

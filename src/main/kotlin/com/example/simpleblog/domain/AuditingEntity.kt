@@ -19,7 +19,6 @@ abstract class AuditingEntity(
      * 업데이트 타임을 기록하기 위해
      *
      * JPA 설계를 하다보면 setter에 대한 것을 막는데
-     *
      */
     @CreatedDate
     @Column(name = "create_at", nullable = false, updatable = false)
@@ -35,7 +34,6 @@ abstract class AuditingEntity(
 @EntityListeners(value = [AuditingEntityListener::class])
 @MappedSuperclass
 abstract class AuditingEntityId : Serializable {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     var id: Long? = null
