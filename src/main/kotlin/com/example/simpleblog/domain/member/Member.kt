@@ -1,23 +1,26 @@
 package com.example.simpleblog.domain.member
 
+import com.example.simpleblog.domain.AuditingEntity
 import jakarta.persistence.*
 
 @Entity
 @Table(name = "Member")
 class Member(
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    var id: Long,
-
+    email: String,
+    password: String,
+    role: Role
+) : AuditingEntity() {
     @Column(name = "email", nullable = false)
-    var email:String,
+    var email: String = email
+        private set
 
     @Column(name = "password")
-    var password:String,
+    var password: String = password
+        private set
 
     @Enumerated(EnumType.STRING)
-    var role: Role
-) {
+    var role: Role = role
+        private set
 }
 
 /**

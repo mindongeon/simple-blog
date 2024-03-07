@@ -9,6 +9,14 @@ plugins {
     kotlin("plugin.jpa") version "1.9.22"
 }
 
+// 해당 어노테이션에 대하여 open 키워드를 붙이는 효과
+allOpen {
+    annotation("javax.persistence.Entity")
+    annotation("javax.persistence.Embeddable")
+    annotation("javax.persistence.MappedSuperClass")
+}
+
+
 group = "com.example"
 version = "0.0.1-SNAPSHOT"
 
