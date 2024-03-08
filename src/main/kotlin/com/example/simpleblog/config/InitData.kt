@@ -26,11 +26,11 @@ class InitData(
             role = Role.USER
         )
 */
-        val members = generateMembers(100)
-        memberRepository.saveAll(members)
-
-        val posts = generatePosts(100)
-        postRepository.saveAll(posts)
+//        val members = generateMembers(100)
+//        memberRepository.saveAll(members)
+//
+//        val posts = generatePosts(100)
+//        postRepository.saveAll(posts)
 
     }
 

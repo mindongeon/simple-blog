@@ -26,6 +26,7 @@ java {
 
 repositories {
     mavenCentral()
+    maven(url = "https://oss.sonatype.org/content/repositories/snapshots")
 }
 
 extra["snippetsDir"] = file("build/generated-snippets")
@@ -38,8 +39,13 @@ dependencies {
 // https://mvnrepository.com/artifact/io.github.microutils/kotlin-logging
     implementation("io.github.microutils:kotlin-logging:3.0.5")
 // https://mvnrepository.com/artifact/com.linecorp.kotlin-jdsl/spring-data-kotlin-jdsl-starter
-    implementation("com.linecorp.kotlin-jdsl:spring-data-kotlin-jdsl-starter:2.2.1.RELEASE")
-
+    //kotlin-jdsl
+    val jdslVersion = "2.2.1.RELEASE"
+    // base
+    implementation("com.linecorp.kotlin-jdsl:hibernate-kotlin-jdsl-jakarta:$jdslVersion")
+    implementation("org.hibernate:hibernate-core:6.2.4.Final") // up to 6
+    // if using spring-data-jpa
+    implementation("com.linecorp.kotlin-jdsl:spring-data-kotlin-jdsl-starter-jakarta:$jdslVersion")
 
 //    implementation("org.springframework.boot:spring-boot-starter-actuator")
 //    implementation("org.springframework.boot:spring-boot-starter-cache")
