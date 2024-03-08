@@ -2,6 +2,7 @@ package com.example.simpleblog.domain.post
 
 import com.example.simpleblog.domain.AuditingEntity
 import com.example.simpleblog.domain.member.Member
+import com.example.simpleblog.domain.member.toDto
 import jakarta.persistence.*
 
 @Entity
@@ -18,7 +19,7 @@ class Post(
     var title: String = title
         private set
 
-    @Column(name = "content")
+    @Column(name = "content", length = 1000)
     var content: String = content
         private set
 
@@ -27,4 +28,16 @@ class Post(
         private set
 
 
+    override fun toString(): String {
+        return "Post(id=$id title='$title', content='$content', member=$member)"
+    }
+
+
 }
+
+fun Post.toDto(): PostRes = PostRes(
+    id = this.id!!,
+    title = this.title,
+    content = this.content,
+    member = this.member.toDto()
+)

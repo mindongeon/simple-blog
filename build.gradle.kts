@@ -37,6 +37,9 @@ dependencies {
     implementation("com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.9.1")
 // https://mvnrepository.com/artifact/io.github.microutils/kotlin-logging
     implementation("io.github.microutils:kotlin-logging:3.0.5")
+// https://mvnrepository.com/artifact/com.linecorp.kotlin-jdsl/spring-data-kotlin-jdsl-starter
+    implementation("com.linecorp.kotlin-jdsl:spring-data-kotlin-jdsl-starter:2.2.1.RELEASE")
+
 
 //    implementation("org.springframework.boot:spring-boot-starter-actuator")
 //    implementation("org.springframework.boot:spring-boot-starter-cache")
